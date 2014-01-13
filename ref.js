@@ -29,7 +29,8 @@ tern.registerPlugin('ref', function(server, options) {
           var target = getPath(file.name, ident);
           if (target) return {path: target, file: file.name};
 
-          var expr = tern.findQueryExpr(file, {start: ident.start, end: ident.end});
+          try { expr = tern.findQueryExpr(file, {start: ident.start, end: ident.end}); }
+          catch (e) { console.error('warning: findQueryExpr failed:', e, 'at', ident.name, 'in', file.name, ident.start + '-' + ident.end); }
           if (expr) {
             var av = infer.expressionType(expr);
             if (!av) throw new Error('!av');
