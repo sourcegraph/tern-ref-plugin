@@ -21,7 +21,7 @@ tern.registerPlugin('ref', function(server, options) {
         };
         function setPath(span, path) {
           span = span.replace(/\[\d+:\d+\]/g, '');
-          if (c[span]) throw new Error('key "' + span + '" is already set to path "' + path + '"');
+          if (c[span]) throw new Error('key "' + span + '" is already set to path "' + c[span] + '" (tried to set to "' + path + '")');
           return c[span] = path;
         };
 
