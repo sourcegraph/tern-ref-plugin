@@ -47,7 +47,7 @@ tern.registerPlugin('ref', function(server, options) {
 
         Object.keys(state.types).forEach(function(path) {
           var data = state.types[path];
-          setPath(data.span, path);
+          if (data.span) setPath(data.span, path);
         });
 
         state.cx.parent.files.forEach(function(file) {
