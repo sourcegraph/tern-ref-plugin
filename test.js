@@ -6,6 +6,7 @@ describe('tern condense output', function() {
     {name: 'builtin_origin'},
     {name: 'target_primitive'},
     {name: 'requirejs', args: ['--plugin', 'requirejs', 'testdata/requirejs_b.js']},
+    {name: 'nodejs', args: ['--plugin', 'node']},
     {name: 'anonymous'},
   ].filter(function(file) { return new RegExp(process.env['F'] || '').test(file.name); }).forEach(function(file) {
     it(file.name + ' (with args: ' + (file.args || []).join(' ') + ')', function(done) {
