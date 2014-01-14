@@ -49,9 +49,6 @@ tern.registerPlugin('ref', function(server, options) {
                 return {path: path, origin: v.origin};
               }
             }
-            if (v.name && !(v instanceof infer.Prim)) {
-              return {path: v.name, origin: v.origin};
-            }
           }
 
           return resolveAValOrType(av) || resolveAValOrType(av.getType());
