@@ -29,7 +29,7 @@
       "end": 5,
       "target": {
         "path": "a",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -38,7 +38,7 @@
       "end": 12,
       "target": {
         "path": "a",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -47,7 +47,7 @@
       "end": 20,
       "target": {
         "path": "b",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -56,7 +56,7 @@
       "end": 25,
       "target": {
         "path": "b.c",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -65,7 +65,7 @@
       "end": 29,
       "target": {
         "path": "b.c.d",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -74,7 +74,7 @@
       "end": 32,
       "target": {
         "path": "a",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -83,7 +83,7 @@
       "end": 37,
       "target": {
         "path": "b",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -92,7 +92,7 @@
       "end": 39,
       "target": {
         "path": "b.c",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -101,7 +101,7 @@
       "end": 42,
       "target": {
         "path": "b",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -110,7 +110,7 @@
       "end": 50,
       "target": {
         "path": "b",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -119,7 +119,7 @@
       "end": 52,
       "target": {
         "path": "b.c",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -128,7 +128,7 @@
       "end": 54,
       "target": {
         "path": "b.c.d",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -136,8 +136,17 @@
       "start": 57,
       "end": 62,
       "target": {
-        "path": "Array",
-        "origin": "ecma5"
+        "origin": "ecma5",
+        "path": "Array"
+      }
+    },
+    {
+      "file": "testdata/simple.js",
+      "start": 71,
+      "end": 77,
+      "target": {
+        "origin": "ecma5",
+        "path": "String.prototype.length"
       }
     },
     {
@@ -146,7 +155,7 @@
       "end": 90,
       "target": {
         "path": "E",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -155,7 +164,7 @@
       "end": 125,
       "target": {
         "path": "E",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -164,7 +173,7 @@
       "end": 130,
       "target": {
         "path": "E",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -173,7 +182,7 @@
       "end": 132,
       "target": {
         "path": "E.h",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -182,7 +191,7 @@
       "end": 139,
       "target": {
         "path": "E",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -191,7 +200,7 @@
       "end": 141,
       "target": {
         "path": "E.h",
-        "file": "testdata/simple.js"
+        "origin": "testdata/simple.js"
       }
     },
     {
@@ -199,8 +208,8 @@
       "start": 149,
       "end": 153,
       "target": {
-        "path": "Date",
-        "origin": "ecma5"
+        "origin": "ecma5",
+        "path": "Date"
       }
     },
     {
@@ -208,17 +217,12 @@
       "start": 160,
       "end": 171,
       "target": {
-        "path": "Date.prototype.toUTCString",
-        "origin": "ecma5"
+        "origin": "ecma5",
+        "path": "Date.prototype.toUTCString"
       }
     }
   ],
   "!ref_unresolved": [
-    {
-      "file": "testdata/simple.js",
-      "start": 71,
-      "name": "length"
-    },
     {
       "file": "testdata/simple.js",
       "start": 91,

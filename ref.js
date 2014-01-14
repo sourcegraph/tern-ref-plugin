@@ -28,7 +28,7 @@ tern.registerPlugin('ref', function(server, options) {
         function resolveIdent(file, ident) {
           var target = getPath(file.name, ident);
           if (target) {
-            return {path: target, file: file.name};
+            return {path: target, origin: file.name};
           }
 
           try {
@@ -40,13 +40,13 @@ tern.registerPlugin('ref', function(server, options) {
           }
 
           var av = infer.expressionType(expr);
-
           function resolveAValOrType(v) {
             if (!v) return;
+            if (v.path) return {origin: v.origin, path: v.path};
             if (v.originNode) {
               var path = getPath(v.origin, v.originNode)
               if (path) {
-                return {path: path, file: v.origin};
+                return {path: path, origin: v.origin};
               }
             }
             if (v.name && !(v instanceof infer.Prim)) {

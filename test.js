@@ -3,6 +3,7 @@ var assert = require('assert'), execFile = require('child_process').execFile, fs
 describe('tern condense output', function() {
   [
     {name: 'simple'},
+    {name: 'target_primitive'},
     {name: 'requirejs', args: ['--plugin', 'requirejs', 'testdata/requirejs_b.js']},
   ].forEach(function(file) {
     it(file.name + ' (with args: ' + (file.args || []).join(' ') + ')', function(done) {
