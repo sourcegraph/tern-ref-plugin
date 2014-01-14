@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "mocha": "1.10.0",
-    "tern-local-scope-condense-plugin": "~0.0.6"
+    "tern-local-scope-condense-plugin": "~0.0.7"
   },
   "scripts": {
     "test": "mocha"

@@ -48,10 +48,6 @@
           "!type": "fn(f: ?)",
           "!span": "testdata/locals.js@74[5:6]-75[5:7]"
         }
-      },
-      "g": {
-        "!type": "fn(h: ?)",
-        "!span": "testdata/locals.js@103[8:4]-104[8:5]"
       }
     }
   },
@@ -124,7 +120,7 @@
       "start": 103,
       "end": 104,
       "target": {
-        "path": "@local.testdata/locals`js.g",
+        "path": "g",
         "origin": "testdata/locals.js"
       }
     },
