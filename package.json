@@ -1,7 +1,7 @@
 {
   "name": "tern-ref-plugin",
   "description": "Tern plugin that augments condenser output with information about identifiers and the types they reference",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "author": {
     "name": "Quinn Slack",
     "email": "sqs@sourcegraph.com"
