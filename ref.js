@@ -27,23 +27,34 @@ tern.registerPlugin('ref', function(server, options) {
 
         function resolveIdent(file, ident) {
           var target = getPath(file.name, ident);
-          if (target) return {path: target, file: file.name};
+          if (target) {
+            return {path: target, file: file.name};
+          }
 
-          try { expr = tern.findQueryExpr(file, {start: ident.start, end: ident.end}); }
-          catch (e) { console.error('warning: findQueryExpr failed:', e, 'at', ident.name, 'in', file.name, ident.start + '-' + ident.end); }
-          if (expr) {
-            var av = infer.expressionType(expr);
-            if (!av) throw new Error('!av');
-            if (av.originNode) {
-              var path = getPath(av.origin, av.originNode)
-              if (path) return {path: path, file: av.origin};
+          try {
+            expr = tern.findQueryExpr(file, {start: ident.start, end: ident.end});
+          }
+          catch (e) {
+            console.error('warning: findQueryExpr failed:', e, 'at', ident.name, 'in', file.name, ident.start + '-' + ident.end);
+            return;
+          }
+
+          var av = infer.expressionType(expr);
+
+          function resolveAValOrType(v) {
+            if (!v) return;
+            if (v.originNode) {
+              var path = getPath(v.origin, v.originNode)
+              if (path) {
+                return {path: path, file: v.origin};
+              }
             }
-            if (av.origin) {
-              target = {origin: av.origin};
-              var type = av.getType(true);
-              if (type) return {path: type.name, origin: av.origin};
+            if (v.name && !(v instanceof infer.Prim)) {
+              return {path: v.name, origin: v.origin};
             }
           }
+
+          return resolveAValOrType(av) || resolveAValOrType(av.getType());
         }
 
         Object.keys(state.types).forEach(function(path) {
@@ -52,9 +63,10 @@ tern.registerPlugin('ref', function(server, options) {
         });
 
         state.cx.parent.files.forEach(function(file) {
+          if (!state.isTarget(file.name)) return;
           idents.inspect(file.ast, function(ident) {
-            var target = resolveIdent(file, ident);
-            if (target) resolvedIdents.push({file: file.name, start: ident.start, end: ident.end, target: target})
+            var t = resolveIdent(file, ident);
+            if (t) resolvedIdents.push({file: file.name, start: ident.start, end: ident.end, target: t})
             else unresolvedIdents.push({file: file.name, start: ident.start, name: ident.name});
           });
         });

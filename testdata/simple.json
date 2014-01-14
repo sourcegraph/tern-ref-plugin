@@ -142,15 +142,6 @@
     },
     {
       "file": "testdata/simple.js",
-      "start": 71,
-      "end": 77,
-      "target": {
-        "path": "number",
-        "origin": "ecma5"
-      }
-    },
-    {
-      "file": "testdata/simple.js",
       "start": 89,
       "end": 90,
       "target": {
@@ -223,6 +214,11 @@
     }
   ],
   "!ref_unresolved": [
+    {
+      "file": "testdata/simple.js",
+      "start": 71,
+      "name": "length"
+    },
     {
       "file": "testdata/simple.js",
       "start": 91,

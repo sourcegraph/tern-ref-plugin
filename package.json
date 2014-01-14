@@ -11,7 +11,7 @@
     "url": "git://github.com/sourcegraph/tern-ref-plugin.git"
   },
   "dependencies": {
-    "tern": "~0.5.0",
+    "tern": "git://github.com/sqs/tern.git#requirejs-condense",
     "javascript-idents": "~0.0.3"
   },
   "devDependencies": {
