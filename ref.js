@@ -65,6 +65,7 @@ tern.registerPlugin('ref', function(server, options) {
         state.cx.parent.files.forEach(function(file) {
           if (!state.isTarget(file.name)) return;
           idents.inspect(file.ast, function(ident) {
+            if (ident.name == "✖") return;
             var t = resolveIdent(file, ident);
             if (t) resolvedIdents.push({file: file.name, start: ident.start, end: ident.end, target: t})
             else unresolvedIdents.push({file: file.name, start: ident.start, name: ident.name});
