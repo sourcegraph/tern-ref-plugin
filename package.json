@@ -15,7 +15,8 @@
     "javascript-idents": "~0.0.3"
   },
   "devDependencies": {
-    "mocha": "1.10.0"
+    "mocha": "1.10.0",
+    "tern-local-scope-condense-plugin": "~0.0.6"
   },
   "scripts": {
     "test": "mocha"

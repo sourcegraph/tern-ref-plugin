@@ -8,6 +8,7 @@ describe('tern condense output', function() {
     {name: 'requirejs', args: ['--plugin', 'requirejs', 'testdata/requirejs_b.js']},
     {name: 'nodejs', args: ['--plugin', 'node']},
     {name: 'anonymous'},
+    {name: 'locals', args: ['--plugin', 'node_modules/tern-local-scope-condense-plugin/local-scope-condense']},
   ].filter(function(file) { return new RegExp(process.env['F'] || '').test(file.name); }).forEach(function(file) {
     it(file.name + ' (with args: ' + (file.args || []).join(' ') + ')', function(done) {
       var expFile = './testdata/' + file.name + '.json';
